@@ -97,8 +97,8 @@ code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-si
 .hero__inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: center; }
 @media (min-width: 1100px) { .hero__text { padding-left: 120px; } }
 .eyebrow { font-size: 15px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #b8c9ff; margin-bottom: 20px; }
-.hero h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.04; font-weight: 700; letter-spacing: -1.5px; }
-@media (min-width: 1100px) { .hero h1 { font-size: clamp(48px, 5vw, 76px); } }
+.hero h1 { font-size: clamp(36px, 5.2vw, 68px); line-height: 1.04; font-weight: 700; letter-spacing: -1.5px; }
+@media (min-width: 1100px) { .hero h1 { font-size: clamp(44px, 4.4vw, 64px); } }
 .hero__lead { margin-top: 24px; max-width: 560px; font-size: 20px; line-height: 1.55; color: #dbe5ff; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
 .hero__facts { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 36px; font-size: 15px; color: #b8c9ff; }
@@ -183,6 +183,24 @@ code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-si
 .plan__list li.off::before {
   background: #d3d5e0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M7 12h10'/%3E%3C/svg%3E") center / 14px no-repeat;
 }
+
+/* ---------- FAQ ---------- */
+.faq { max-width: 860px; }
+.faq__list { display: grid; gap: 14px; }
+.faq__item { background: #fff; border-radius: 22px; box-shadow: 0 8px 30px rgba(27, 33, 51, .05); }
+.faq__item summary {
+  position: relative; list-style: none; cursor: pointer; padding: 24px 68px 24px 28px;
+  font-size: 19px; font-weight: 500; line-height: 1.35;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: ""; position: absolute; right: 26px; top: 50%; width: 12px; height: 12px; margin-top: -8px;
+  border-right: 2.5px solid var(--blue); border-bottom: 2.5px solid var(--blue);
+  transform: rotate(45deg); transition: transform .2s ease;
+}
+.faq__item[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.faq__item summary:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; border-radius: 22px; box-shadow: none; }
+.faq__item p { padding: 0 28px 26px; color: #5e657b; font-size: 17px; line-height: 1.65; max-width: 720px; }
 
 /* ---------- Финальный CTA (как экран входа) ---------- */
 .cta {
