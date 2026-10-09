@@ -45,7 +45,6 @@ code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-si
 .btn--ghost { color: #fff; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .55); }
 .btn--ghost:hover { background: rgba(255, 255, 255, .22); }
 .btn--light { height: 42px; padding: 0 24px; font-size: 15px; background: #fff; color: var(--blue); }
-.btn--white { background: #fff; color: var(--ink); box-shadow: 0 6px 20px rgba(27, 33, 51, .08); }
 .btn--soft { background: #eceaf6; color: #8b8fa3; }
 .btn--soft:hover { background: #e2e0f1; }
 .btn--block { width: 100%; }
@@ -202,29 +201,6 @@ code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-si
 .faq__item summary:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; border-radius: 22px; box-shadow: none; }
 .faq__item p { padding: 0 28px 26px; color: #5e657b; font-size: 17px; line-height: 1.65; max-width: 720px; }
 
-/* ---------- Финальный CTA (как экран входа) ---------- */
-.cta {
-  position: relative; overflow: hidden; isolation: isolate; padding: 120px 0;
-  background:
-    radial-gradient(50% 60% at 100% 100%, #00113d 0%, transparent 70%),
-    linear-gradient(255deg, #0a2a7c 0%, #2f66d6 28%, #a9c0f4 55%, #efe7ee 78%, #f6eeeb 100%);
-}
-.cta::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background:
-    linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)) max(504px, calc(50% - 120px)) 0 / 1px 100% no-repeat,
-    linear-gradient(var(--line), var(--line)) calc(100% - 295px) 0 / 2px 100% no-repeat,
-    linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)) calc(100% - 215px) 0 / 1px 100% no-repeat,
-    linear-gradient(var(--line), var(--line)) 0 12% / 100% 2px no-repeat,
-    linear-gradient(var(--line), var(--line)) 0 88% / 100% 2px no-repeat,
-    repeating-linear-gradient(rgba(255,255,255,.45) 0 1px, transparent 1px 20px) 45% 62% / 55% 22% no-repeat;
-}
-.cta__box { width: min(440px, 100%); }
-.cta__box .logo { display: block; font-size: 52px; margin-bottom: 40px; }
-.cta__box h2 { font-size: 40px; font-weight: 700; line-height: 1.1; letter-spacing: -.5px; }
-.cta__box p { margin: 14px 0 28px; color: #5e657b; font-size: 17px; }
-.cta__box .btn + .btn { margin-top: 14px; }
-
 /* ---------- Подвал ---------- */
 .footer { background: var(--warm); padding: 36px 0; }
 .footer__inner { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
@@ -249,7 +225,6 @@ code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-si
 /* Вертикальные линии сетки только там, где есть свободное поле слева от текста */
 @media (max-width: 1099px) {
   .grid-bg::before { background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 100% 2px, 100% 2px, 0 0; }
-  .cta::before { background-size: 0 0, 0 0, 0 0, 100% 2px, 100% 2px, 0 0; }
 }
 
 @media (max-width: 1024px) {
@@ -276,20 +251,17 @@ code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-si
   .plans { grid-template-columns: minmax(0, 460px); gap: 32px; }
   .plan__desc { min-height: 0; }
   .oss { flex-direction: column; align-items: flex-start; padding: 32px 28px; }
-  .cta { background: linear-gradient(180deg, #f6eeeb 0%, #dfe6f7 55%, #6e98e8 85%, #0a2a7c 100%); }
   .footer__nav { margin-left: 0; width: 100%; }
 }
 
 @media (max-width: 600px) {
   .container { width: calc(100% - 32px); }
-  .section, .pricing, .cta { padding: 80px 0; }
+  .section, .pricing { padding: 80px 0; }
   .cards, .steps { grid-template-columns: 1fr; }
   .grid-bg::before { background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 100% 2px, 100% 2px, 0 0; }
-  .cta::before { background-size: 0 0, 0 0, 0 0, 100% 2px, 100% 2px, 0 0; }
   .hero__lead { font-size: 18px; }
   .hero__cta .btn { width: 100%; }
   .code-card { padding: 14px 18px 20px; }
   .code-card pre { font-size: 12px; }
   .cmd-chip { margin-left: 12px; font-size: 13px; }
-  .cta__box h2 { font-size: 32px; }
 }
