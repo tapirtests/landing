@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tapir — автоматизация E2E-тестирования API</title>
+  <meta name="description" content="Загрузите Swagger — Tapir соберёт базовые сценарии. Правьте их в конструкторе, храните в git и запускайте через CLI, Docker или локальный интерфейс.">
+  <meta name="theme-color" content="#00113d">
+  <meta property="og:title" content="Tapir — автоматизация E2E-тестирования API">
+  <meta property="og:description" content="Сценарии из Swagger, читаемый JSON в git, запуск через CLI, Docker и локальный UI.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a4bff'/%3E%3Ctext x='32' y='45' font-family='Arial' font-weight='700' font-size='38' text-anchor='middle' fill='white'%3ET%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Tapir — на главную">Tapir</a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#features">Возможности</a>
+        <a href="#how">Как это работает</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#" data-link="github" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--light nav__login" href="#" data-link="app">Войти</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero grid-bg">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Автоматизация E2E-тестирования API</p>
+          <h1>Тесты для API без&nbsp;рутины</h1>
+          <p class="hero__lead">
+            Загрузите Swagger — Tapir соберёт базовые сценарии. Правьте их
+            в&nbsp;конструкторе, храните в&nbsp;git и&nbsp;запускайте через CLI, Docker
+            или локальный интерфейс.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#" data-link="app">Начать сейчас</a>
+            <a class="btn btn--ghost" href="#how">Как это работает</a>
+          </div>
+          <ul class="hero__facts">
+            <li>Open source ядро</li>
+            <li>Без обязательной регистрации</li>
+            <li>Язык интерфейса: EN / RU</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card__bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="code-card__file">tapir.json</span>
+            </div>
+<pre><code><span class="p">{</span>
+  <span class="k">"name"</span><span class="p">:</span> <span class="s">"Petstore E2E"</span><span class="p">,</span>
+  <span class="k">"scenarios"</span><span class="p">: [{</span>
+    <span class="k">"id"</span><span class="p">:</span> <span class="s">"pet-lifecycle"</span><span class="p">,</span>
+    <span class="k">"steps"</span><span class="p">: [</span>
+      <span class="p">{</span> <span class="k">"operation"</span><span class="p">: {</span> <span class="k">"operationId"</span><span class="p">:</span> <span class="s">"addPet"</span> <span class="p">},</span>
+        <span class="k">"expect"</span><span class="p">: {</span> <span class="k">"status"</span><span class="p">:</span> <span class="n">200</span> <span class="p">} },</span>
+      <span class="p">{</span> <span class="k">"operation"</span><span class="p">: {</span> <span class="k">"operationId"</span><span class="p">:</span> <span class="s">"getPetById"</span> <span class="p">},</span>
+        <span class="k">"expect"</span><span class="p">: {</span> <span class="k">"status"</span><span class="p">:</span> <span class="n">404</span> <span class="p">} }</span>
+    <span class="p">]</span>
+  <span class="p">}]</span>
+<span class="p">}</span></code></pre>
+          </div>
+          <div class="cmd-chip"><span>$</span> tapir run tapir.json --env stage</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section--warm" id="features">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Всё, чтобы тесты API<br>не превращались в хаос</h2>
+          <p>Писать E2E-тесты долго и монотонно, а при каждом изменении ручки их приходится искать и править вручную. Tapir берёт это на себя.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></svg>
+            </div>
+            <h3>Генерация из Swagger</h3>
+            <p>Загрузите Swagger 2.0 — получите smoke-сценарий на каждую ручку, CRUD-цепочки и простые негативные кейсы (400, 404, 401).</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5 1.4-1.4L6.8 12l3.6-3.6L9 7zm6 0l-1.4 1.4 3.6 3.6-3.6 3.6L15 17l5-5-5-5z"/></svg>
+            </div>
+            <h3>Сценарии живут в git</h3>
+            <p>Один читаемый JSON-файл рядом с кодом. Код-ревью, диффы и ручная правка — как с любым другим файлом проекта.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 00-7.5 5H2l3.5 4L9 9H6.6A6 6 0 1112 18v2a8 8 0 000-16zm-1 4v5l4 2.4.8-1.3-3.3-2V8H11z"/></svg>
+            </div>
+            <h3>Актуальность при изменении API</h3>
+            <p>Шаги ссылаются на ручки по <code>operationId</code>. Изменился Swagger — видно, что именно затронуто, и можно выбрать: обновить или пропустить.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v3H4V5zm0 5.5h10v3H4v-3zM4 16h16v3H4v-3z"/></svg>
+            </div>
+            <h3>Интерактивный конструктор</h3>
+            <p>Редактируйте сгенерированные сценарии и собирайте свои: логин-фикстуры, несколько ролей, передача данных между шагами.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2L3 6v5.5c0 5 3.8 9.7 9 10.5 5.2-.8 9-5.5 9-10.5V6l-9-4zm-1.2 14.2L7 12.4l1.4-1.4 2.4 2.4 4.8-4.8 1.4 1.4-6.2 6.2z"/></svg>
+            </div>
+            <h3>Расхождения со спецификацией</h3>
+            <p>В отчёте — ожидаемый и реальный ответы, а отдельным разделом — всё, что не совпало со схемой Swagger.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 011 1v10a1 1 0 01-1 1h-6v2h3v2H7v-2h3v-2H4a1 1 0 01-1-1V5a1 1 0 011-1zm1 2v8h14V6H5z"/></svg>
+            </div>
+            <h3>Локальный UI и CI</h3>
+            <p><code>tapir ui</code> в Docker видит приватные API и сети docker-compose. CLI возвращает код выхода и JSON-отчёт — подходит для CI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--soft" id="how">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Как это работает</h2>
+          <p>От документации до отчёта — четыре шага.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">1</span>
+            <h3>Загрузите Swagger</h3>
+            <p>Спецификация в JSON или YAML. Tapir разберёт ручки, схемы и входные данные.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">2</span>
+            <h3>Получите сценарии</h3>
+            <p>Базовые сценарии строятся автоматически — их можно сразу запускать или доработать.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">3</span>
+            <h3>Отредактируйте и сохраните</h3>
+            <p>Правьте в конструкторе или прямо в JSON. Файл кладётся в git вместе с кодом.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">4</span>
+            <h3>Запустите и изучите отчёт</h3>
+            <p>CLI, Docker или локальный интерфейс. В отчёте — запросы, ответы и pass/fail.</p>
+          </li>
+        </ol>
+
+        <div class="oss reveal">
+          <div>
+            <h3>Ядро — open source</h3>
+            <p>Формат сценариев, CLI, Docker-образ и локальный интерфейс открыты. Облако Tapir добавляет хранение и дополнительные возможности.</p>
+          </div>
+          <a class="btn btn--primary" href="#" data-link="github" target="_blank" rel="noopener">Открыть на GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing grid-bg" id="pricing">
+      <div class="container">
+        <h2 class="pricing__title reveal">Тарифы</h2>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Базовый план</h3>
+            <p class="plan__desc">Для знакомства с Tapir и базового тестирования API. Подходит для небольших проектов</p>
+            <p class="plan__price">Бесплатно</p>
+            <h4>Базовые возможности</h4>
+            <ul class="plan__list">
+              <li>Тестирование запросов</li>
+              <li>Создание кастомных сценариев</li>
+              <li class="off">Хранение в облаке</li>
+            </ul>
+            <a class="btn btn--soft btn--block" href="#" data-link="app">Начать бесплатно</a>
+          </article>
+
+          <article class="plan plan--plus reveal">
+            <h3>Плюс</h3>
+            <p class="plan__desc">Для разработчиков, которым нужно больше возможностей для автоматизации тестирования</p>
+            <p class="plan__price">499 руб <small>/месяц</small></p>
+            <h4>Базовые возможности</h4>
+            <ul class="plan__list">
+              <li>Тестирование запросов</li>
+              <li>Создание кастомных сценариев</li>
+              <li>Хранение в облаке</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#" data-link="app">Начать сейчас</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta" id="start">
+      <div class="container cta__inner">
+        <div class="cta__box reveal">
+          <span class="logo logo--blue">Tapir</span>
+          <h2>Попробуйте без установки</h2>
+          <p>Редактор работает без обязательной регистрации. Войти нужно только для облачного хранения и платных функций.</p>
+          <a class="btn btn--primary btn--block" href="#" data-link="app">Начать сейчас</a>
+          <a class="btn btn--white btn--block" href="#" data-link="github" target="_blank" rel="noopener">Посмотреть на GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo logo--blue">Tapir</span>
+      <span class="footer__copy">© 2026 Tapir</span>
+      <nav class="footer__nav" aria-label="Ссылки в подвале">
+        <a href="#features">Возможности</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#" data-link="github" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
